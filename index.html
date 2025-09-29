@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cute Website</title>
+  <style>
+    body {
+      background-color: pink;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    .hidden {
+      display: none;
+    }
+    button {
+      background: white;
+      border: 2px solid hotpink;
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 20px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    button:hover {
+      background: hotpink;
+      color: white;
+    }
+    .marquee {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: purple;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 100%;
+      box-sizing: border-box;
+      position: relative;
+    }
+    .marquee span {
+      display: inline-block;
+      position: absolute;
+      will-change: transform;
+      animation: scroll-left 5s linear infinite; /* 2x speed */
+    }
+    @keyframes scroll-left {
+      from { transform: translateX(100%); }
+      to { transform: translateX(-100%); }
+    }
+  </style>
+</head>
+<body>
+  <h1 id="startText">Enter to know the truth</h1>
+  <button id="enterBtn">Enter</button>
+
+  <div id="options" class="hidden">
+    <h2>Choose an option</h2>
+    <button onclick="showResult()">Cutess girl</button>
+    <button onclick="showResult()">Beautiful girl</button>
+    <button onclick="showResult()">Pretty girl</button>
+    <button onclick="showResult()">Kidess girl</button>
+  </div>
+
+  <div id="result" class="hidden">
+    <h2>Avika ji ur the only in universe</h2>
+    <div class="marquee">
+      <span>I love u n/0 such that x ∈ R</span>
+    </div>
+  </div>
+
+  <script>
+    const enterBtn = document.getElementById("enterBtn");
+    const startText = document.getElementById("startText");
+    const options = document.getElementById("options");
+    const result = document.getElementById("result");
+
+    enterBtn.addEventListener("click", () => {
+      startText.style.display = "none";
+      enterBtn.style.display = "none";
+      options.classList.remove("hidden");
+    });
+
+    function showResult() {
+      options.classList.add("hidden");
+      result.classList.remove("hidden");
+    }
+  </script>
+<audio id="background-audio" loop>
+    <source src="theme_gullu.mp3" type="audio/mp3">
+    ...
+</audio>
+</body>
+</html>
